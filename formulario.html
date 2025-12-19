@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Formulario</title>
+        <link rel="stylesheet" href="css/estilos.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=BBH+Bogle&display=swap" rel="stylesheet">
+    </head>
+    
+    <body>
+        <header>
+            <h1>Formularios y Tablas en HTML</h1>
+            <button id="temaBtn">🌙 Modo oscuro</button>
+        </header>
+        
+        <main>
+            <section class="formulariocont">
+                <h2>Formulario</h2>
+                <form>
+                    <label for="nombre">Nombre</label>
+                    <input id="nombre" type="text" required>
+                    <label for="correo">Correo</label>
+                    <input id="correo" type="email" required>
+                    <label for="mensaje">Mensaje</label>
+                    <textarea id="mensaje" required></textarea>
+                    <button type="submit">Enviar</button>
+                </form>
+                <h3>Tabla de contactos</h3>
+                <table>
+                    <tr><th>Contacto</th><th>Red social</th></tr>
+                    <tr><td>razambrano33@gmail.com</td><td>Shikima18</td></tr>
+                </table>
+            </section>
+        </main>
+        <nav class="navegador" aria-label="Menú principal">
+            <h3>Menú de Navegación</h3>
+            <ul>
+                <li><a href="index.html"><i class="fa-solid fa-house"></i> Inicio</a></li>
+                <li><a href="html.html"><i class="fa-brands fa-html5"></i> HTML</a></li>
+                <li><a href="css.html"><i class="fa-brands fa-css3-alt"></i> CSS</a></li>
+                <li><a href="javascript.html"><i class="fa-brands fa-js"></i> JavaScript</a></li>
+            </ul>
+        </nav>
+        <footer>
+            <p>© 2025 HTML5 – Todos los derechos reservados por Richard Zambrano</p>
+        </footer>
+           <script src="js/tema.js"></script>
+    </body>
+</html>
