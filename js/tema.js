@@ -2,7 +2,7 @@ const boton = document.getElementById("temaBtn");
 
 if (localStorage.getItem("tema") === "oscuro") {
   document.body.classList.add("oscuro");
-  boton.textContent = "☀️ Modo claro";
+  boton.textContent = " Modo claro";
 }
 
 boton.addEventListener("click", () => {
@@ -11,5 +11,5 @@ boton.addEventListener("click", () => {
   const tema = document.body.classList.contains("oscuro") ? "oscuro" : "claro";
   localStorage.setItem("tema", tema);
 
-  boton.textContent = tema === "oscuro" ? "☀️ Modo claro" : "🌙 Modo oscuro";
+  boton.textContent = tema === "oscuro" ? " Modo claro" : " Modo oscuro";
 });

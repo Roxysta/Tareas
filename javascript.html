@@ -2,57 +2,88 @@
 <html lang="es">
     <head>
         <meta charset="UTF-8">
-        <title>¿Que es JavaScript?</title>
-        <link rel="stylesheet" href="css/estilos.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=BBH+Bogle&display=swap" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Que hace JavaScript?</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
     </head>
 
-    <body>
-        <header>
-            <h1>JavaScript</h1>
-            <button id="temaBtn">🌙 Modo oscuro</button>
-        </header>
-        <main>
-            <section class="contenedor">
-                <div>
-                    <h2>¿Qué es JavaScript?</h2>
-                    <article>
-                        <p class="parrafos">
-                        JavaScript es el lenguaje de programación que da interactividad
-                        y dinamismo a una página web. Siguiendo el ejemplo de una casa,
-                        JavaScript sería la instalación eléctrica que la hace funcional
-                    </p>
-                    <h3>Aplicaciones</h3>
-                    <ul class="listas">
-                        <li>Animaciones y efectos</li>
-                        <li>Validación de formularios</li>
-                    </ul>
-                </article>
+    <body class="bg-light">
+        <header class="bg-secondary p-4 shadow">
+            <div class="container d-flex justify-content-between align-items-center">
+                <div class="row align-items-center">
+                    <div class="col-md-8">
+                        <h1 class="display-5 fw-bold">Que es JavaScript?</h1>
+                    </div>
+                    <div class="col-md-4 text-md-end">
+                        <button type="button" class="btn btn-dark" id="darkModeToggle">Modo Oscuro</button>
+                    </div>
+                </div>
             </div>
-            
-            <figure>
-                <img src="Imagenes/imagentare3.jpg" alt="Ejemplo de código JavaScript" width="350">
-            </figure>
+        </header>
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light rounded shadow-sm p-3 mb-5">
+                    <div class="container-fluid">
+                        <h2 class="navbar-brand mb-0">Menú de Navegación</h2>
+                        <div class="navbar-nav flex-row flex-wrap">
+                            <a class="nav-link btn btn-outline-success mx-2 my-1" href="index.html">Inicio</a>
+                            <a class="nav-link btn btn-outline-warning mx-2 my-1" href="html.html">HTML</a>
+                            <a class="nav-link btn btn-outline-primary mx-2 my-1" href="css.html">CSS</a>
+                            <a class="nav-link btn btn-outline-info mx-2 my-1" href="formulario.html">Formulario</a>
+                        </div>
+                    </div>
+                </nav>
+
+
+        <main>
+            <section>
+                <div class="card mb-3" >
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="Imagenes/imagentare3.jpg" class="img-fluid rounded-start"  alt="Ejemplo de código JavaScript" >
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h3 class="card-title text-secondary">¿Qué es JavaScript?</h3>
+                                <p class="card text">
+                                    JavaScript es el lenguaje de programación que da interactividad 
+                                    y dinamismo a una página web. Siguiendo el ejemplo de una casa,
+                                    JavaScript sería la instalación eléctrica que la hace funcional
+                                </p>
+                                <h4 class="card text-secondary">Aplicaciones</h4>
+                                <ul class="list group-list">
+                                <li>Animaciones y efectos</li>
+                                <li>Validación de formularios</li>
+                            </ul>
+                            </div>
+                        </div>
+                    </div>       
+                    </div>
         </section>
 
-        <nav class="navegador">
-            <h4>Menu de Navegacion</h4>
-            <ul>
-                <li><a href="index.html"><i class="fa-solid fa-house"></i> Inicio</a></li>
-                <li><a href="html.html"><i class="fa-brands fa-html5"></i> HTML</a></li>
-                <li><a href="css.html"><i class="fa-brands fa-css3-alt"></i> CSS</a></li>
-                <li><a href="formulario.html"><i class="fa-solid fa-envelope"></i> Formulario</a></li>
-            </ul>
-        </nav>
     </main>
 
-        <footer>
-        <p>© 2025 HTML5 – Todos los derechos reservados por Richard Zambrano</p>
-        </footer>
-   <script src="js/tema.js"></script>
+        <footer class="bg-dark text-white text-center p-3">
+        <p class="mb-0">© 2025 HTML5 – Todos los derechos reservados por Richard Zambrano</p>
+    </footer>
+
+    <!-- Script para el modo oscuro (reto creativo anterior que deje por pasion) -->
+    <script>
+        document.getElementById('darkModeToggle').addEventListener('click', function() {
+            // Alternar la clase 'dark-mode' 
+            document.body.classList.toggle('dark-mode');
+
+            // Cambiar el texto del botón
+            if (document.body.classList.contains('dark-mode')) {
+                this.textContent = 'Modo Claro';
+                this.classList.remove('btn-dark');
+                this.classList.add('btn-light');
+            } else {
+                this.textContent = 'Modo Oscuro';
+                this.classList.remove('btn-light');
+                this.classList.add('btn-dark');
+            }
+        });
+    </script>
     </body>
 
 </html>

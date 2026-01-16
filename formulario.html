@@ -2,51 +2,94 @@
 <html lang="es">
     <head>
         <meta charset="UTF-8">
-        <title>Formulario</title>
-        <link rel="stylesheet" href="css/estilos.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=BBH+Bogle&display=swap" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Formularios y Tablas</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
     </head>
-    
-    <body>
-        <header>
-            <h1>Formularios y Tablas en HTML</h1>
-            <button id="temaBtn">🌙 Modo oscuro</button>
+
+    <body class="bg-light">
+        <header class="bg-info p-4 shadow">
+            <div class="container d-flex justify-content-between align-items-center">
+                <div class="row align-items-center">
+                    <div class="col-md-8">
+                        <h1 class="display-5 fw-bold">Formularios Y Tablas</h1>
+                    </div>
+                    <div class="col-md-4 text-md-end">
+                        <button type="button" class="btn btn-dark" id="darkModeToggle">Modo Oscuro</button>
+                    </div>
+                </div>
+            </div>
         </header>
-        
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light rounded shadow-sm p-3 mb-5">
+                    <div class="container-fluid">
+                        <h2 class="navbar-brand mb-0">Menú de Navegación</h2>
+                        <div class="navbar-nav flex-row flex-wrap">
+                            <a class="nav-link btn btn-outline-success mx-2 my-1" href="index.html">Inicio</a>
+                            <a class="nav-link btn btn-outline-warning mx-2 my-1" href="html.html">HTML</a>
+                            <a class="nav-link btn btn-outline-primary mx-2 my-1" href="css.html">CSS</a>
+                            <a class="nav-link btn btn-outline-secondary mx-2 my-1" href="javascript.html">JavaScript</a>
+                        </div>
+                    </div>
+                </nav>
+
         <main>
-            <section class="formulariocont">
-                <h2>Formulario</h2>
-                <form>
-                    <label for="nombre">Nombre</label>
-                    <input id="nombre" type="text" required>
-                    <label for="correo">Correo</label>
-                    <input id="correo" type="email" required>
-                    <label for="mensaje">Mensaje</label>
-                    <textarea id="mensaje" required></textarea>
-                    <button type="submit">Enviar</button>
+            <section class="container">
+                <h3 class="text-info">Formulario</h3>
+                <form class="row gy-2 gx-3 align-items-center">
+                    <div class="col-auto">
+                        <label class="visually-hidden" for="nombre">Nombre</label>
+                        <input type="text" class="form-control" id="nombre" placeholder="Nombre">
+                    </div>
+                    <div class="col-auto">
+                        <label class="visually-hidden" for="correo">Correo</label>
+                        <input type="email" class="form-control" id="correo" placeholder="correo@ejemplo.com">
+                    </div>
+                    <div class="col-auto">
+                        <label class="visually-hidden" for="mensaje">Mensaje</label>
+                        <input type="text" class="form-control" id="mensaje" placeholder="Mensaje">
+                    </div>
+                    <div class="col-auto">
+                        <button type="submit" class="btn btn-primary">Enviar</button>
+                    </div>
                 </form>
-                <h3>Tabla de contactos</h3>
-                <table>
-                    <tr><th>Contacto</th><th>Red social</th></tr>
-                    <tr><td>razambrano33@gmail.com</td><td>Shikima18</td></tr>
+                <table class="table table-info table-striped mt-4">
+                    <caption class="text-info fw-bold">Tabla de contactos</caption>
+                    <thead>
+                        <tr>
+                            <th>Contacto</th><th>Red social</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>razambrano33@gmail.com</td><td>Shikima18</td>
+                        </tr>
+                    </tbody>
                 </table>
             </section>
         </main>
-        <nav class="navegador" aria-label="Menú principal">
-            <h3>Menú de Navegación</h3>
-            <ul>
-                <li><a href="index.html"><i class="fa-solid fa-house"></i> Inicio</a></li>
-                <li><a href="html.html"><i class="fa-brands fa-html5"></i> HTML</a></li>
-                <li><a href="css.html"><i class="fa-brands fa-css3-alt"></i> CSS</a></li>
-                <li><a href="javascript.html"><i class="fa-brands fa-js"></i> JavaScript</a></li>
-            </ul>
-        </nav>
-        <footer>
-            <p>© 2025 HTML5 – Todos los derechos reservados por Richard Zambrano</p>
-        </footer>
-           <script src="js/tema.js"></script>
+
+        <footer class="bg-dark text-white text-center p-3">
+        <p class="mb-0">© 2025 HTML5 – Todos los derechos reservados por Richard Zambrano</p>
+    </footer>
+
+    <!-- Script para el modo oscuro (reto creativo anterior que deje por pasion) -->
+    <script>
+        document.getElementById('darkModeToggle').addEventListener('click', function() {
+            // Alternar la clase 'dark-mode' 
+            document.body.classList.toggle('dark-mode');
+
+            // Cambiar el texto del botón
+            if (document.body.classList.contains('dark-mode')) {
+                this.textContent = 'Modo Claro';
+                this.classList.remove('btn-dark');
+                this.classList.add('btn-light');
+            } else {
+                this.textContent = 'Modo Oscuro';
+                this.classList.remove('btn-light');
+                this.classList.add('btn-dark');
+            }
+        });
+    </script>
     </body>
 </html>

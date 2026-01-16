@@ -2,57 +2,110 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>INTRODUCCIÓN AL DESARROLLO WEB</title>
-    <link rel="stylesheet" href="css/estilos.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=BBH+Bogle&display=swap" rel="stylesheet">
-</head>
-<body>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
 
-    <header>
-        <h1>INTRODUCCION AL DESARROLLO WEB</h1>
-        <button id="temaBtn">🌙 Modo oscuro</button>
+</head>
+<body class="bg-light">
+
+    <header class="bg-primary text-white p-4">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <h1 class="display-5 fw-bold">INTRODUCCIÓN AL DESARROLLO WEB</h1>
+                </div>
+                <div class="col-md-4 text-md-end">
+                    <button type="button" class="btn btn-dark" id="darkModeToggle">Modo Oscuro</button>
+                </div>
+            </div>
+        </div>
     </header>
 
-    <main>
-       <section class="contenedor">
-        <div>
-            <h2>La Introduccion al Desarrollo Web</h2>
-            <p class="parrafos">
-                La introducción al desarrollo web es el punto de partida para comprender 
-                cómo se construyen las páginas y aplicaciones que funcionan en internet. 
-                Hoy en día, toda página web moderna se construye principalmente con:
-            </p>
-        </div>
-        <figure>
-            <img src="Imagenes/imagentare.jpg" alt="Ilustración sobre desarrollo web" width="250">
-        </figure>
-        <table>
-            <tr><th colspan="2">Tabla Comparativa</th></tr>
-            <tr><th>Lenguaje</th><th>Tarea</th></tr>
-            <tr><td>HTML</td><td>Estructura el contenido de la página web</td></tr>
-            <tr><td>CSS</td><td>Le da estilo visual al contenido de la página web</td></tr>
-            <tr><td>JavaScript</td><td>Encargado de darle dinamismo e interactividad</td></tr>
-        </table>
-    </section>
-        <nav class="navegador">
-            <h3>Menu de Navegacion</h3>
-            <ul>
-                <li><a href="html.html"><i class="fa-brands fa-html5"></i> HTML</a></li>
-                <li><a href="css.html"><i class="fa-brands fa-css3-alt"></i> CSS</a></li>
-                <li><a href="javascript.html"><i class="fa-brands fa-js"></i> JavaScript</a></li>
-                <li><a href="formulario.html"><i class="fa-solid fa-envelope"></i> Formulario</a></li>
-            </ul>
-        </nav>
+     <nav class="navbar navbar-expand-lg navbar-light bg-light rounded shadow-sm p-3 mb-5">
+                    <div class="container-fluid">
+                        <h2 class="navbar-brand mb-0">Menú de Navegación</h2>
+                        <div class="navbar-nav flex-row flex-wrap">
+                            <a class="nav-link btn btn-outline-warning mx-2 my-1" href="html.html">HTML</a>
+                            <a class="nav-link btn btn-outline-primary mx-2 my-1" href="css.html">CSS</a>
+                            <a class="nav-link btn btn-outline-secondary mx-2 my-1" href="javascript.html">JavaScript</a>
+                            <a class="nav-link btn btn-outline-info mx-2 my-1" href="formulario.html">Formulario</a>
+                        </div>
+                    </div>
+                </nav>
+
+    <main class="container my-4">
+        <section class="mb-5">
+            <div class="row-align-items-center">
+                <div class="col-lg-8">
+                    <h3 class="text-primary">La Introducción al Desarrollo Web</h3>
+                <p class="parrafos lead">
+                    La introducción al desarrollo web es el punto de partida para comprender 
+                    cómo se construyen las páginas y aplicaciones que funcionan en internet. 
+                    Hoy en día, toda página web moderna se construye principalmente con:
+                </p>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <figure class="col-md-4 d-flex justify-content-center align-items-center">
+                        <img src="Imagenes/imagentare.jpg" alt="Ilustración sobre desarrollo web" class="img-fluid rounded" width="250">
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-5">
+            <h4 class="text-primary">Tabla De Lenuajes Webs</h4>
+            <table class="table table-hover table-bordered">
+                <thead class="table-primary">
+                    <tr>
+                        <th colspan="2" class="text-center">Tabla Comparativa</th>
+                    </tr>
+                    <tr>
+                        <th>Lenguaje</th>
+                        <th>Tarea</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>HTML</td>
+                        <td>Estructura el contenido de la página web</td>
+                    </tr>
+                    <tr>
+                        <td>CSS</td>
+                        <td>Le da estilo visual al contenido de la página web</td>
+                    </tr>
+                    <tr>
+                        <td>JavaScript</td>
+                        <td>Encargado de darle dinamismo e interactividad</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        
     </main>
 
-    <footer>
-        <p>© 2025 HTML5 – Todos los derechos reservados por Richard Zambrano</p>
+    <footer class="bg-dark text-white text-center p-3">
+        <p class="mb-0">© 2025 HTML5 – Todos los derechos reservados por Richard Zambrano</p>
     </footer>
 
-    <script src="js/tema.js"></script>
+    <!-- Script para el modo oscuro (reto creativo anterior que deje por pasion) -->
+    <script>
+        document.getElementById('darkModeToggle').addEventListener('click', function() {
+            // Alternar la clase 'dark-mode' 
+            document.body.classList.toggle('dark-mode');
+
+            // Cambiar el texto del botón
+            if (document.body.classList.contains('dark-mode')) {
+                this.textContent = 'Modo Claro';
+                this.classList.remove('btn-dark');
+                this.classList.add('btn-light');
+            } else {
+                this.textContent = 'Modo Oscuro';
+                this.classList.remove('btn-light');
+                this.classList.add('btn-dark');
+            }
+        });
+    </script>
 
 </body>
 </html>

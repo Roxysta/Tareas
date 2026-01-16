@@ -2,55 +2,96 @@
 <html lang="es">
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Qué es CSS?</title>
-        <link rel="stylesheet" href="css/estilos.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=BBH+Bogle&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
     </head>
-    <body>
 
-        <header>
-            <h1>Que es CSS?</h1>
-            <button id="temaBtn">🌙 Modo oscuro</button>
+
+    <body class="bg-light">
+
+        <header class="bg-primary p-4 shadow">
+            <div class="container d-flex justify-content-between align-items-center">
+                <div class="row align-items-center">
+                    <div class="col-md-8">
+                        <h1 class="display-5 fw-bold">Que es CSS?</h1>
+                    </div>
+                    <div class="col-md-4 text-md-end">
+                        <button type="button" class="btn btn-dark" id="darkModeToggle">Modo Oscuro</button>
+                    </div>
+                </div>
+            </div>
         </header>
-        <main>
-            <section class="contenedor">
-                <div>
-                    <p class="parrafos">
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light rounded shadow-sm p-3 mb-5">
+                    <div class="container-fluid">
+                        <h2 class="navbar-brand mb-0">Menú de Navegación</h2>
+                        <div class="navbar-nav flex-row flex-wrap">
+                            <a class="nav-link btn btn-outline-success mx-2 my-1" href="index.html">Inicio</a>
+                            <a class="nav-link btn btn-outline-warning mx-2 my-1" href="html.html">HTML</a>
+                            <a class="nav-link btn btn-outline-secondary mx-2 my-1" href="javascript.html">JavaScript</a>
+                            <a class="nav-link btn btn-outline-info mx-2 my-1" href="formulario.html">Formulario</a>
+                        </div>
+                    </div>
+                </nav>
+        
+        <main class="container my-5"> <section class="row g-4 align-items-center"> <div class="col-lg-6">
+            <div class="card shadow-sm h-100">
+                <div class="card-body">
+                    <h3 class="card-title text-primary">¿Qué hace CSS?</h3>
+                    <p class="card-text">
                         CSS define el estilo visual de los elementos HTML. Si HTML es la
                         estructura de una casa (columnas y ladrillos), CSS es la pintura y
                         el acabado que le da estilo y color.
                     </p>
+                    <table class="table table-hover mt-3">
+                        <thead class="table-dark">
+                            <tr><th>Ventaja</th><th>Descripción</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Colorido</td><td>Mejor paleta de colores.</td></tr>
+                            <tr><td>Avanzado</td><td>Estructuras ordenadas.</td></tr>
+                        </tbody>
+                    </table>
                 </div>
-                <table>
-                    <tr><th>Ventaja</th><th>Descripcion</th>
-                    </tr> <tr><td>Estilos coloridos</td><td>Permite diseños contemporaneos y una mejor paleta de colores</td>
-                    </tr> <tr><td>Estilos avanzados</td><td>Diseños mas complejos, estructuras y ordenados para que la pagina sea lo mejor visible para el usuario</td></tr>
-                </table>
-                <div class="video">
-                    <h2>Video explicativo de CSS</h2>
-                    <video controls>
+            </div>
+        </div>
+
+        <div class="col-lg-6">
+            <div class="p-3 bg-white border rounded shadow-sm">
+                <h4 class="mb-3 text-center">Video Explicativo</h4>
+                <div class="ratio ratio-16x9">
+                    <video controls class="rounded">
                         <source src="Vidios/explicacionCSS.mp4" type="video/mp4">
                     </video>
                 </div>
-            </section>
-            
-            <nav class="navegador">
-            <h3>Menu de Navegacion</h3>
-            <ul>
-                <li><a href="index.html"><i class="fa-solid fa-house"></i> Inicio</a></li>
-                <li><a href="html.html"><i class="fa-brands fa-html5"></i> HTML</a></li>
-                <li><a href="javascript.html"><i class="fa-brands fa-js"></i> JavaScript</a></li>
-                <li><a href="formulario.html"><i class="fa-solid fa-envelope"></i> Formulario</a></li>
-            </ul>
-        </nav>
-    </main>
+            </div>
+        </div>
 
-        <footer>
-        <p>© 2025 HTML5 – Todos los derechos reservados por Richard Zambrano</p>
-        </footer>
-   <script src="js/tema.js"></script>
+    </section>
+</main>
+
+        <footer class="bg-dark text-white text-center p-3">
+        <p class="mb-0">© 2025 HTML5 – Todos los derechos reservados por Richard Zambrano</p>
+    </footer>
+
+    <!-- Script para el modo oscuro (reto creativo anterior que deje por pasion) -->
+    <script>
+        document.getElementById('darkModeToggle').addEventListener('click', function() {
+            // Alternar la clase 'dark-mode' 
+            document.body.classList.toggle('dark-mode');
+
+            // Cambiar el texto del botón
+            if (document.body.classList.contains('dark-mode')) {
+                this.textContent = 'Modo Claro';
+                this.classList.remove('btn-dark');
+                this.classList.add('btn-light');
+            } else {
+                this.textContent = 'Modo Oscuro';
+                this.classList.remove('btn-light');
+                this.classList.add('btn-dark');
+            }
+        });
+    </script>
     </body>
 </html>
